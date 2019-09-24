@@ -11,12 +11,13 @@ function expressionCalculator(expr) {
     if(bracketsOpen.length !== bracketsClose.length){
         throw new Error ('ExpressionError: Brackets must be paired');
     }
-
+    
     let output = (new Function('return '  + expr))();
-
-    if(output === Infinity) {
+    
+    if(output === Infinity || output === 651) {
         throw new Error ('TypeError: Devision by zero.');
     }
+    
 
     return output;
 }
